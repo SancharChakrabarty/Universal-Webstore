@@ -1,0 +1,24 @@
+.curved-loop-outer {
+  width: 100%;
+  height: 120px;
+  min-height: unset;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.curved-loop-svg {
+  width: 100%;
+  overflow: visible;
+}
+
+.curved-loop-svg text {
+  fill: #015be8;
+  font-weight: 700;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 18px;
+}

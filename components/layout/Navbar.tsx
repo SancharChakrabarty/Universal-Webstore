@@ -12,21 +12,17 @@ import gsap from "gsap";
 import { useCart } from "@/lib/cart-context";
 import SearchOverlay from "@/components/search/SearchOverlay";
 import BrandsMenu from "@/components/layout/menus/BrandsMenu";
-import FlavorsMenu from "@/components/layout/menus/FlavorsMenu";
 import InfoAccountMenu from "@/components/layout/menus/InfoAccountMenu";
 import { brands } from "@/lib/data";
-import { flavors } from "@/lib/data";
-import { getFlavorIcon } from "@/lib/flavorIcons";
 
-type MegaKey = "brands" | "flavors" | "info";
-type MobileExpandKey = "brands" | "flavors" | "info" | null;
+type MegaKey = "brands" | "info";
+type MobileExpandKey = "brands" | "info" | null;
 
 const navLinks: { label: string; href: string; mega?: MegaKey }[] = [
   { label: "Home", href: "/" },
   { label: "Brands", href: "/brands", mega: "brands" },
   { label: "New Arrivals", href: "/new-arrivals" },
   { label: "On Sale", href: "/sale" },
-  { label: "Flavors", href: "/flavors", mega: "flavors" },
   { label: "Bundles", href: "/bundles" },
   { label: "Info and Account", href: "/account", mega: "info" },
 ];
@@ -201,7 +197,6 @@ export default function Navbar() {
   const isActive = (link: typeof navLinks[0]) => {
     if (link.href === "/") return pathname === "/";
     if (link.mega === "brands") return pathname.startsWith("/brands");
-    if (link.mega === "flavors") return pathname.startsWith("/flavors");
     if (link.mega === "info") return pathname.startsWith("/account") || pathname.startsWith("/contact");
     return pathname === link.href;
   };
@@ -251,7 +246,6 @@ export default function Navbar() {
               )}
 
               {link.mega === "brands" && openMega === "brands" && <BrandsMenu />}
-              {link.mega === "flavors" && openMega === "flavors" && <FlavorsMenu />}
               {link.mega === "info" && openMega === "info" && <InfoAccountMenu />}
             </div>
           ))}
@@ -414,45 +408,6 @@ export default function Navbar() {
                 >
                   On Sale
                 </Link>
-
-                {/* Flavors accordion */}
-                <div ref={collectNavItem} style={{ opacity: 0 }}>
-                  <button
-                    type="button"
-                    onClick={() => toggleMobileExpand("flavors")}
-                    aria-expanded={mobileExpanded === "flavors"}
-                    className="flex w-full items-center justify-between rounded-xl px-3 py-3 text-sm font-medium text-ink-soft transition-colors hover:bg-tint hover:text-primary"
-                  >
-                    <span>Flavors</span>
-                    <ChevronDown
-                      size={16}
-                      className={`text-ink-faint transition-transform duration-200 ${mobileExpanded === "flavors" ? "rotate-180" : ""}`}
-                    />
-                  </button>
-                  {mobileExpanded === "flavors" && (
-                    <div className="flex flex-col gap-0.5 pl-3">
-                      {flavors.map((f) => {
-                        const { icon: Icon, color } = getFlavorIcon(f.name);
-                        return (
-                          <Link
-                            key={f.id}
-                            href={`/flavors/${f.slug}`}
-                            onClick={closeMobile}
-                            className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm text-ink-soft transition-colors hover:bg-tint hover:text-primary"
-                          >
-                            <span
-                              className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full"
-                              style={{ backgroundColor: `${color}1a` }}
-                            >
-                              <Icon size={14} style={{ color }} />
-                            </span>
-                            {f.name}
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
 
                 {/* Bundles */}
                 <Link

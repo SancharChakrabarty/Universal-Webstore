@@ -25,7 +25,7 @@ export default function TermsOfServicePage() {
 
         <h2 className="mt-8 font-display text-base font-bold text-ink">Shipping</h2>
         <p className="mt-2">
-          Orders ship from our EU warehouse to addresses within the United
+          Orders are dispatched from our warehouse to addresses within the United
           States only. See our{" "}
           <a href="/shipping-info" className="font-semibold text-primary">
             Shipping Info

@@ -2,10 +2,8 @@ import Hero from "@/components/home/Hero";
 import BrandCarousel from "@/components/home/BrandCarousel";
 import ProductRow from "@/components/home/ProductRow";
 import ShippingSection from "@/components/home/ShippingSection";
-import StrengthSection from "@/components/home/StrengthSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Reviews from "@/components/home/Reviews";
-import FollowClub from "@/components/home/FollowClub";
 import FAQ from "@/components/home/FAQ";
 import { getProductsDB } from "@/lib/db";
 
@@ -25,10 +23,8 @@ export default async function HomePage() {
       <ProductRow heading="Featured Products" products={featured} bgColor="#eef4ff" />
       <ProductRow heading="On Sale" products={onSale} viewAllHref="/sale" />
       <ShippingSection />
-      <StrengthSection />
       <WhyChooseUs />
       <Reviews />
-      <FollowClub />
       <FAQ />
     </>
   );

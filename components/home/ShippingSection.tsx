@@ -12,7 +12,7 @@ if (typeof window !== "undefined") {
 
 const steps = [
   { icon: PackageCheck, title: "Order placed", note: "Confirmed within minutes" },
-  { icon: Warehouse, title: "Ships from EU warehouse", note: "Packed within 24 hours" },
+  { icon: Warehouse, title: "Fast Order Dispatch", note: "Packed within 24 hours" },
   { icon: BadgeCheck, title: "Customs cleared", note: "Duties handled for you" },
   { icon: Home, title: "Delivered to your door", note: "3–4 business days" },
 ];

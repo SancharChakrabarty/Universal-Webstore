@@ -1,12 +1,10 @@
 import Link from "next/link";
-import { Instagram, Music2, Mail } from "lucide-react";
 
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "Brands", href: "/brands" },
   { label: "New Arrivals", href: "/new-arrivals" },
   { label: "On Sale", href: "/sale" },
-  { label: "Flavors", href: "/flavors" },
   { label: "Bundles", href: "/bundles" },
   { label: "Contact Us", href: "/contact" },
 ];
@@ -29,21 +27,8 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <span className="font-display text-xl font-bold text-ink">My Store</span>
             <p className="mt-3 max-w-sm text-sm text-ink-soft">
-              Premium products from top brands&apos;s best brands, shipped fast
-              and discreetly to your door in the USA.
+              Premium products from the world&apos;s best brands, shipped fast to your door.
             </p>
-            <div className="mt-4 flex gap-3">
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-ink-soft hover:text-primary">
-                <Instagram size={20} />
-              </a>
-              <a href="#" aria-label="TikTok" className="text-ink-soft hover:text-primary">
-                <Music2 size={20} />
-              </a>
-              <a href="#" aria-label="Email" className="text-ink-soft hover:text-primary">
-                <Mail size={20} />
-              </a>
-            </div>
-
           </div>
 
           {/* Quick links */}
@@ -76,9 +61,9 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-sm font-semibold text-ink">Join the Club</h4>
+            <h4 className="text-sm font-semibold text-ink">Stay Updated</h4>
             <p className="mt-3 text-sm text-ink-soft">
-              New flavors, restocks, and member-only offers in your inbox.
+              New arrivals, restocks, and member-only offers in your inbox.
             </p>
             <form className="mt-3 flex gap-2">
               <input
@@ -88,7 +73,7 @@ export default function Footer() {
                 className="w-full rounded-pill border border-line bg-white px-4 py-2 text-sm outline-none focus:border-primary"
               />
               <button type="submit" className="btn-primary px-4 py-2 text-xs">
-                Join
+                Subscribe
               </button>
             </form>
           </div>
@@ -105,13 +90,6 @@ export default function Footer() {
             </span>
           ))}
         </div>
-
-        {/* Disclaimer */}
-        <p className="mt-6 max-w-3xl text-xs leading-relaxed text-ink-faint">
-          WARNING: This product contains product. Product is an addictive
-          chemical. Not for sale to minors — you must be 21 years of age or
-          older to purchase. Keep out of reach of children and pets.
-        </p>
 
         <div className="mt-4 flex flex-col gap-2 border-t border-line pt-4 text-xs text-ink-faint sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} My Store. All rights reserved.</span>

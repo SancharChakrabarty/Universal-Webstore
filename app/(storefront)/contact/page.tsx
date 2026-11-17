@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import PageHeader from "@/components/shop/PageHeader";
 import ContactForm from "@/components/contact/ContactForm";
 
@@ -23,17 +23,14 @@ export default function ContactPage() {
               <Mail size={16} className="text-primary" /> support@mystore.com
             </div>
             <div className="mt-3 flex items-center gap-3 text-sm text-ink-soft">
-              <Phone size={16} className="text-primary" /> (888) 555-0123
-            </div>
-            <div className="mt-3 flex items-center gap-3 text-sm text-ink-soft">
-              <MapPin size={16} className="text-primary" /> Shipped from our EU warehouse
+              <MapPin size={16} className="text-primary" /> [Your Business Address]
             </div>
           </div>
 
           <div className="card p-6">
             <h3 className="font-display text-sm font-bold text-ink">Common Questions</h3>
             <p className="mt-2 text-sm text-ink-soft">
-              Shipping times, returns, and age verification are answered on our FAQ page.
+              Shipping times, returns, and order tracking are answered on our FAQ page.
             </p>
             <Link href="/faq" className="mt-3 inline-block text-sm font-semibold text-primary">
               Visit the FAQ →
